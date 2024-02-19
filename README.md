@@ -47,3 +47,11 @@
 -------------| -------------
 Мужской      | 58%
 Женский      | 42% 
+
+## Список источников
+
+1. https://tgstat.ru/research-2023
+
+2. https://www.demandsage.com/telegram-statistics/
+
+3. https://www.businessofapps.com/data/telegram-statistics/
