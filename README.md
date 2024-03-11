@@ -190,6 +190,7 @@
 L3:
 Балансировка будет по схеме Virtual Server via IP Tunneling
 
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/de3f99a0-3714-429c-b93a-7ac53e610c17)
 
 
 Для обеспечаения отказоустойчивости системы стоит использовать framework *keepalived* благодаря следующим преимуществам:
