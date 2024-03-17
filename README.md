@@ -213,6 +213,9 @@ L7:
 
 # Логическая схема базы данных
 
+![drawSQL-image-export-2024-03-17](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/4009f51a-7336-4db2-8c58-093b53408f02)
+
+
 # Список источников
 
 1. https://tgstat.ru/research-2023
