@@ -218,7 +218,7 @@ L7:
 
 [Ссылка на логическую схему БД](https://dbdiagram.io/d/Highload-Gleb-Makarenko-DB-6600741fae072629ced3dd73)
 
-![Highload Gleb Makarenko DB (1)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/05dc8c11-3a50-4f1b-9f01-449dd2e44927)
+![Highload Gleb Makarenko DB (2)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/071b1ac7-198b-40a3-af2a-65d8c3a718a1)
 
 ## Схема S3
 
