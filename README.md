@@ -277,6 +277,10 @@ reactions, posts, comments, messages, attachments, subscribes_metric, post_views
 ## Поиск
 Для эффективного поиска людей, поиска по постам и сообщениям будем использовать движок ElasticSearch. Это поисковый и аналитический движок, который основан на технологии поиска по тексту.
 
+Копии таблиц users, messages, channels, posts можно положить в хранилище ElasticSearch (в логической схеме user_search, message_search, channel_search, post_search). Оно предоставляет механизм для поиска, анализа и хранения данных в реальном времени.
+
+В качестве СУБД дл
+
 * ```user```
    * ```phone_number``` - полное совпадение
 
