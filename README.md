@@ -221,7 +221,8 @@ L7:
 
 [Ссылка на логическую схему БД](https://dbdiagram.io/d/Highload-Gleb-Makarenko-DB-6600741fae072629ced3dd73)
 
-![Highload Gleb Makarenko DB (3)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/6e398d04-6641-4735-9588-3d4761b750fd)
+![Логическая схема БД)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/67f471ff-0bcc-4c60-a1c1-dde62471a55a)
+
 
 ## Схема S3
 
@@ -237,24 +238,31 @@ L7:
 Для хранения файлов будет использоваться сервер с большим объемом памяти.
 
 Технологии для хранения данных:
-Таблиа(-ы) | Технология|
+Таблица(-ы) | Технология|
 ------ |------------------ |
 sessions   | redis |
 users, chats, channels, users_meta, channels_meta, users_channels, users_chats, subsribes_metric | PostgreSQL |
-reactions, posts, comments, messages, attachments, subscribes_metric, views_per_user, post_views_per_user | MongoDB |
+reactions, posts, comments, messages, attachments, subscribes_metric, post_views_per_user | MongoDB |
 
 Так как один сервер PostgreSQL не выдержит планируемую нагрузку, выполним шардинг таблицы сообщений. Для более быстрого доступа к данным будет необходимо использовать индексы. 
 
 * Для таблиц users, chats, channels инекс по полю id
 * Для таблиц channels_meta, user_meta индекс по полю channel_id и user_id соответственно.
-* Остальное храним в MongoDB в виде ключ-значение
+* Остальное храним в MongoDB в виде ключ-значение.
+* post_reactions, comments, post_views_per_user получаем по полю post_id
+* attachments - id
+* subscribes_metric, posts по полю channel_id
+* messages - chat_id
+* messages_reactions - message_id
+* comments_reactions - comment_id
 
 Также необходимо выполнить шардинг
 
-* Для шардинга сообщений необходимо сделать шардинг таблиц messages, forwards, replies по полю chat_id
-* Для шардинга постов необходимо сделать шардинг posts по полю channel_id
-* Для шардинга комментариев необходимо сделать шардинг comments по полю post_id
+* Для шардинга сообщений необходимо сделать шардинг таблиц messages по полю chat_id
+* Для шардинга постов необходимо сделать шардинг posts, subscribes_metric по полю channel_id
+* Для шардинга комментариев и просмотра постов необходимо сделать шардинг comments и post_views_per_user по полю post_id
 * Для шардинга реакций необходимо сделать шардинг по полю *_id
+* Также имеет смысл сделать шардинг таблиц users_channels и users_chats по полю channel и chat_id соответственно
 
 В совокупности это даст следующий результат:
 
