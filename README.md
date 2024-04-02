@@ -221,7 +221,7 @@ L7:
 
 [Ссылка на логическую схему БД](https://dbdiagram.io/d/Highload-Gleb-Makarenko-DB-6600741fae072629ced3dd73)
 
-![Highload Gleb Makarenko DB (6)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/25daa2cc-7ac2-4749-8f52-641c440e43f5)
+![Highload Gleb Makarenko DB](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/ab07452a-7508-44e6-9fd6-b8b85c5f256b)
 
 ## Схема S3
 
@@ -242,6 +242,7 @@ L7:
 sessions   | redis |
 users, chats, channels, users_meta, channels_meta, users_channels, users_chats, subsribes_metric | PostgreSQL |
 reactions, posts, comments, messages, attachments, subscribes_metric, post_views_per_user | MongoDB |
+*_search | ElasticSearch |
 
 Так как один сервер PostgreSQL не выдержит планируемую нагрузку, выполним шардинг таблицы сообщений. Для более быстрого доступа к данным будет необходимо использовать индексы. 
 
