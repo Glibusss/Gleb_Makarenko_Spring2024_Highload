@@ -362,7 +362,7 @@ Analithycs - Аналитика
 В проекте присутствуют 2 основные СУБД - MongoDB и PSQL
 Хранение осуществляется следующим образом
 
-Таблица(-ы) | Технология|
+Таблицы | Технология|
 ------ |------------------ |
 users, chats, channels, users_meta, channels_meta, users_channels, users_chats, subsribes_metric | PostgreSQL |
 reactions, posts, comments, messages, attachments, subscribes_metric, post_views_per_post | MongoDB |
