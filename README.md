@@ -221,7 +221,7 @@ L7:
 
 [Ссылка на логическую схему БД](https://dbdiagram.io/d/Highload-Gleb-Makarenko-DB-6600741fae072629ced3dd73)
 
-![Highload Gleb Makarenko DB (1)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/a9df311b-96a1-442f-8b91-b465d2811026)
+![Highload Gleb Makarenko DB (2)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/fbe81611-2627-4633-bbcd-c783fc65ddef)
 
 ## Схема S3
 
@@ -241,15 +241,15 @@ L7:
 ------ |------------------ |
 sessions   | redis |
 users, chats, channels, users_meta, channels_meta, users_channels, users_chats, subsribes_metric | PostgreSQL |
-reactions, posts, comments, messages, attachments, subscribes_metric, post_views_per_user | MongoDB |
+reactions, posts, comments, messages, attachments, subscribes_metric, post_views_per_post | MongoDB |
 *_search | ElasticSearch |
 
-Так как один сервер PostgreSQL не выдержит планируемую нагрузку, выполним шардинг таблицы сообщений. Для более быстрого доступа к данным будет необходимо использовать индексы. 
+Так как один сервер PostgreSQL и MongoDB не выдержит планируемую нагрузку, выполним шардинг таблицы сообщений. Для более быстрого доступа к данным будет необходимо использовать индексы. 
 
 * Для таблиц users, chats, channels инекс по полю id
 * Для таблиц channels_meta, user_meta индекс по полю channel_id и user_id соответственно.
 * Остальное храним в MongoDB в виде ключ-значение.
-* post_reactions, comments, post_views_per_user получаем по полю post_id
+* post_reactions, comments, views_per_post получаем по полю post_id
 * attachments - id
 * subscribes_metric, posts по полю channel_id
 * messages - chat_id
@@ -292,7 +292,7 @@ reactions, posts, comments, messages, attachments, subscribes_metric, post_views
      
      Индексы(в порядке убывания важности): ```timestamp```, ```chat_id```
      
-     Обращение к ХД: По ```content```, возвращаются все частичные совпадения после приведения к одному регистру
+     Обращение к ХД: По ```content```, возвращаются все частичные совпадения
 
 * ```post```
    * ```content``` - частичное совпадение, допускаются различные формы слов
@@ -300,15 +300,21 @@ reactions, posts, comments, messages, attachments, subscribes_metric, post_views
      
      Индексы(в порядке убывания важности):  ```timestamp```, ```channel_name```
      
-     Обращение к ХД: по полю ```content```, возвращаются все частичные совпадения после приведения к одному регистру, либо по полю ```channel_name```, возвращаются все частичные совпадения
+     Обращение к ХД: по полю ```content```, возвращаются все частичные совпадения, либо по полю ```channel_name```, возвращаются все частичные совпадения
 
 * ```channel```
    * ```name``` - частичное совпадение, допускаются различные формы слов
      
      Индексы(в порядке убывания важности): ```subscribers_count```, ```name```
      
-     Обращение к ХД: по полю ```name```, возвращаются все частичные совпадения после приведения к одному регистру
-   
+     Обращение к ХД: по полю ```name```, возвращаются все частичные совпадения
+
+
+Частичные совпадения для ```content``` в постах и сообщениях ищутся по следующей схеме:  
+Создается **wildcard** запрос, который ищет вхождения переданной строки в текст сообщения или поста
+
+Частичные совпадения для ```channel_name``` и ```name``` ищутся по следующей схеме:
+Создается **query_string** запрос, который ищет совпадения префикса искомого имени с переданным значением
 
 Поиск по сообщениям и постам будет отдавать приоритет наиболее новым
 
