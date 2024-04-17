@@ -430,7 +430,7 @@ Amazon S3 Glacier Instant Retrieval предлагает:
 
 # Схема
 
-![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/b8d413d6-d6cc-4f79-aa1c-aaa4ace715bb)
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/52d2d44d-dd5a-4f9a-93d1-93d22b616295)
 
 # Список источников
 
