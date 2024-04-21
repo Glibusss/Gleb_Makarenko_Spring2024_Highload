@@ -430,7 +430,7 @@ Amazon S3 Glacier Instant Retrieval предлагает:
 
 # Схема
 
-![Диаграмма без названия drawio](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/12df1388-f29d-4660-93c2-26206198edac)
+![Диаграмма без названия drawio (1)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/2eca6d9f-ca59-44b9-b4dd-b0483221fc11)
 
 # Отказоустойчивость
 
