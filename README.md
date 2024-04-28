@@ -421,9 +421,10 @@ Amazon S3 Glacier Instant Retrieval предлагает:
 
 # 9 Схема
 
-![Диаграмма без названия drawio (1)](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/2eca6d9f-ca59-44b9-b4dd-b0483221fc11)
+Легенда:
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/afefdf33-3bff-438d-ad37-4280fd8d236f)
 
-Реализуется паттерн saga(Хореография)
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/01edc230-b263-4c51-92e3-b04d62dadd34)
 
 # 10 Отказоустойчивость
 
