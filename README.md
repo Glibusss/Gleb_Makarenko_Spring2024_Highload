@@ -425,7 +425,7 @@ Amazon S3 Glacier Instant Retrieval предлагает:
 
 ![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/718b91f4-5c33-4f52-a99f-d3a975e669bc)
 
-![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/f67163a2-e536-48a6-98e7-70aabce68d59)
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/a5145261-073d-45e3-b436-cdceaf1159b9)
 
 ![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/515be32d-4faf-4279-8e82-7a017c5a32f1)
 
