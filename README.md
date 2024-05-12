@@ -435,7 +435,7 @@ Amazon S3 Glacier Instant Retrieval предлагает:
 
 ![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/718b91f4-5c33-4f52-a99f-d3a975e669bc)
 
-![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/6e0aaa54-d5dc-485e-87cc-d1f6dd881fc5)
+![image](https://github.com/Glibusss/Gleb_Makarenko_Spring2024_Highload/assets/113942267/9a4f47ae-78b9-45cd-93e8-69863f63944b)
 
 Будет использоваться API Gateway для обеспечения изолированности логики различных клиентов и централизованной точки маршрутизации. На Gateway также будет происходить балансировка между сервисами, т.к. архитектура будет разделена на микросервисы для изоляции бизнес-логики.
 
